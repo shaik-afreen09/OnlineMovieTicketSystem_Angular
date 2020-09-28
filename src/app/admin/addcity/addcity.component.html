@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<div class="container">
+        <h3>ADD CITY</h3>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+
+        <div class="form-group">
+            <label>SNO:</label>
+            <input required minlength="1" type="number" #citSnoRef='ngModel' name="sno" ngModel class="form-control">
+            <div *ngIf='citSnoRef.errors && citSnoRef.touched' class="alert alert-danger">
+                <div [hidden]='!citSnoRef.errors.required'> Provide city sno! </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>CITY ID:</label>
+            <input required minlength="1" type="number" #citIdRef='ngModel' name="cityId" ngModel class="form-control">
+            <div *ngIf='citIdRef.errors
+                  
+            && citIdRef.touched' class="alert alert-danger">
+                <div [hidden]='!citIdRef.errors.required'> Provide city id </div>
+                <div *ngIf='citIdRef.errors.pattern'>CityId should be minimum of 1 character length</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>CITY NAME: </label>
+            <input required minlength="1" length="10" type="text" #citNameRef='ngModel' name="cityNames" ngModel class="form-control">
+            <div *ngIf='citNameRef.errors && citNameRef.touched' class="alert alert-danger">
+              <div [hidden]='!citNameRef.errors.required'> Provide city name! </div>
+            </div>
+        </div>
+
+        <input [disabled]="userForm.invalid" type="submit" value="Add a city" class="btn btn-primary">
+
+    </form>
+
+</div>
+<div>
+    <h2>{{message}}</h2>
+</div>

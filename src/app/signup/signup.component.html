@@ -1,0 +1,77 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+
+        <h3>SIGN UP</h3>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+        <div class="form-group">
+            <label>SNO: </label>
+            <input required minlength="1" type="number" #SnoRef='ngModel' name="sno" ngModel class="form-control">
+            <div *ngIf='SnoRef.errors && SnoRef.touched' class="alert alert-danger">
+                <div [hidden]='!SnoRef.errors.required'> Provide sno </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Name:</label>
+            <!-- <input name="username" [ngModel]="user.username" required [pattern]="unamePattern" #uname="ngModel">
+		<div *ngIf="uname.errors && userForm.submitted && !isValidFormSubmitted" [ngClass] = "'error'">  -->
+            <input required minlength="3" type="text" #NameRef='ngModel' name="name" ngModel class="form-control">
+            <div *ngIf='NameRef.errors
+                        && NameRef.touched' class="alert alert-danger">
+                <div [hidden]='!NameRef.errors.required'> Provide full name </div>
+                <div *ngIf='NameRef.errors.pattern'>Fullname should be minimum of 3 characters length</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>User name: </label>
+            <input required minlength="3" type="text" #userNameRef='ngModel' name="username" ngModel class="form-control" required [pattern]="unamePattern">
+            <div *ngIf='userNameRef.errors && userNameRef.touched' class="alert alert-danger">
+                <div [hidden]='!userNameRef.errors.required'> Provide user name </div>
+                <div *ngIf='userNameRef.errors.pattern'>Username should be minimum of 3 characters length</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password: </label>
+            <input required minlength="8" type="password" #PwdRef='ngModel' name="password" ngModel class="form-control" required [pattern]="pwdPattern">
+            <div *ngIf='PwdRef.errors && PwdRef.touched' class="alert alert-danger">
+                <div [hidden]='!PwdRef.errors.required'> Enter your password </div>
+                <div *ngIf='PwdRef.errors.pattern'>Password pattern(atleast 1 uppercase,lowercase,number with 8 to 15 character length)</div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email ID: </label>
+
+            <input required minlength="11" type="email" #EmaRef='ngModel' name="email" ngModel class="form-control" required [pattern]="emailPattern">
+
+            <div *ngIf='EmaRef.errors && EmaRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!EmaRef.errors.required'> Enter your Email id </div>
+                <div *ngIf='EmaRef.errors.pattern'>Enter proper Email Id format</div>
+
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label>Phone Number: </label>
+
+            <input required minlength="10" type="number" #PhnRef='ngModel' name="userPhoneno" ngModel class="form-control" [pattern]="mobnumPattern">
+
+            <div *ngIf='PhnRef.errors && PhnRef.touched' class="alert alert-danger">
+
+                <div [hidden]='!PhnRef.errors.required'> Enter your phone number </div>
+                <div *ngIf='PhnRef.errors.pattern'>phone number should be of 10 numbers and start with either '6'/'7'/'8'/'9' !</div>
+
+    </div>
+        </div>
+        <input [disabled]="userForm.invalid" type="submit" value="SIGN UP" class="btn btn-primary">
+
+    </form>
+
+</div>
+<div>
+    <h2>{{message}}</h2>
+</div>

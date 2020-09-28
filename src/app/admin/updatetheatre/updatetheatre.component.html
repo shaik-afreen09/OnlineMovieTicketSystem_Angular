@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+    <h3>UPDATE THEATRE DETAILS</h3>
+    <form #userForm="ngForm" (ngSubmit)='onUpdatet(userForm.value)'>
+        <div class="form-group">
+            <label>THEATRE ID:</label>
+            <input required minlength="1" type="number" [(ngModel)]="obj1.theatreId" readonly="readonly" #theaIdRef='ngModel'
+                name="theatreId" ngModel class="form-control">
+        </div>
+  <div class="form-group">
+            <label>CITY NAME: </label>
+            <input required minlength="3" type="string" [(ngModel)]="obj1.cityName" #theaCitRef='ngModel' name="cityName" ngModel
+                class="form-control">
+            <div *ngIf='theaCitRef.errors
+                        && theaCitRef.touched' class="alert alert-danger">
+                <div [hidden]='!theaCitRef.errors.required'>
+                    Provide city name!
+                </div>
+                <div *ngIf='theaCitRef.errors.pattern'>City name should be minimum of 3 characters length</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>THEATRE NAME: </label>
+            <input required minlength="3" type="text" [(ngModel)]="obj1.theatreName" #theaNameRef='ngModel' name="theatreName"
+                ngModel class="form-control">
+ <div *ngIf='theaNameRef.errors && theaNameRef.touched' class="alert alert-danger">
+                <div [hidden]='!theaNameRef.errors.required'> Provide theatre name! </div>
+            </div>
+        </div>
+          <input [disabled]="userForm.invalid" type="submit" value="Edit Theatre" class="btn btn-primary">
+    </form>
+</div>
+<div>
+    <h2><i>{{message}}</i></h2>
+</div>

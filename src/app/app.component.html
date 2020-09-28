@@ -1,0 +1,60 @@
+
+
+<!-- <div style="margin-right: 80%;">
+ 
+  <div class="container " style="background-color:yellowgreen;bottom: 0"><br>
+    <div class="container col-md-11">
+      <br><br>
+  <input type="button" class="container  btn btn-primary " value="Book Movie Tickets" routerLink="Book-ticket">
+  <br><br>
+  <input type="button" class="container  btn btn-primary " value="Cancel my Movie tickets" routerLink="Cancel-ticket">
+  <br><br>
+  <input type="button" class="container  btn btn-primary " value="Home" routerLink="home">
+  <br><br>
+  <input type="button" class="container  btn btn-primary " value="Sign Up" routerLink="signup">
+  <br><br> 
+  <input type="button" class="container  btn btn-primary " value="Admin Login" routerLink="adminlogin">
+  <br><br>
+  </div>
+  </div>
+  </div>
+  <router-outlet></router-outlet>
+   -->
+   <br>
+   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <div class="container-fluid">
+    <!-- <h1 align="center">Online Movie Ticket System</h1>
+    <br> -->
+    <!-- <img src="../assets/img/movie.png" alt="" width="100" height="80"><br> -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="">
+      </a>
+      <ul class="nav nav-pills ">
+      <li class="nav-item ">
+          <a class="nav-link" class="btn btn-light btn-sm mr-3"  routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-light btn-sm mr-3"  routerLink="signup">Dont have an Account? Sign Up</a>
+        </li>
+        <li class="nav-item ">
+        <a class="nav-link" class="btn btn-light  btn-sm  mr-3" routerLink="Book-ticket">Book Movie Tickets</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" class="btn btn-light btn-sm mr-3"  routerLink="Cancel-ticket">Cancel Movie tickets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" class="btn btn-light btn-sm mr-3"  routerLink="adminlogin">Admin Login</a>
+      </li>
+
+    </ul>
+    </nav>
+    </div>
+  
+  <div class="container-fluid">
+    <marquee behavior="scroll" direction="right"><h3><i>Online Movie Ticket System</i></h3></marquee>
+
+  <router-outlet></router-outlet>
+  </div>

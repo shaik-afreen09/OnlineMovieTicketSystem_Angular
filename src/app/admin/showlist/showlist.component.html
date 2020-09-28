@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+    <table class="table table-striped" *ngIf="shows && shows.length > 0  else elseBlock">
+        <thead>
+        <tr>
+            <th>SNO</th>
+            <th>TIMINGS</th>
+            <th>SHOW NAME</th>
+            <th>DELETE SHOW</th>
+            <th>EDIT SHOW</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of shows">
+                <td> {{s.sno}} </td>
+                <td> {{s.timings}} </td>
+                <td> {{s.show}} </td>
+                <td>
+                    <button type="button" class="btn btn-block btn-primary" (click)=deletes(s)>Delete</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-block btn-primary" (click)=updates(s)>Edit</button>
+                </td>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #elseBlock>
+        <h4 align="center"> There are no shows to display,add the shows! </h4>
+    </ng-template>
+
+</div>
+<div>
+    <h2>{{message}}</h2>
+</div>
+ 

@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+        <h3>ADD SHOW</h3>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+        <div class="form-group">
+            <label>SNO: </label>
+            <input required minlength="1" type="number" #shoSnoRef='ngModel' name="sno" ngModel class="form-control">
+            <div *ngIf='shoSnoRef.errors && shoSnoRef.touched' class="alert alert-danger">
+                <div [hidden]='!shoSnoRef.errors.required'> Provide show sno!</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>TIMINGS: </label>
+            <input required minlength="1" type="string" #shoTimRef='ngModel' name="timings" ngModel class="form-control">
+            <div *ngIf='shoTimRef.errors
+                        && shoTimRef.touched' class="alert alert-danger">
+                <div [hidden]='!shoTimRef.errors.required'> Provide show timings </div>
+                <div *ngIf='shoTimRef.errors.pattern'>Timings should be minimum of 5 characters length!</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>SHOW NAME: </label>
+            <input required minlength="1" type="text" #shoNameRef='ngModel' name="show" ngModel class="form-control">
+            <div *ngIf='shoNameRef.errors && shoNameRef.touched' class="alert alert-danger">
+                <div [hidden]='!shoNameRef.errors.required'> Provide show name!</div>
+            </div>
+        </div>
+
+        <input [disabled]="userForm.invalid" type="submit" value="Add a show" class="btn btn-primary">
+    </form>
+</div>
+<div>
+    <h2>{{message}}</h2>
+</div>

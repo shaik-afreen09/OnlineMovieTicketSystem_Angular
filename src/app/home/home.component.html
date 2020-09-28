@@ -1,0 +1,115 @@
+<form class="container panel-default col-md-4">
+    <div class="form-group" align="center">
+        <img src="../assets/img/city.png" alt="" width="50" height="50">
+        <h2><i>To select a city</i></h2><button type="submit" class="btn btn-link-large" (click)='getcityNames()'>click here</button>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div>
+        <ng-container *ngFor="let city of cities">&nbsp;
+           <input type="submit" value={{city.cityNames}} (click)="selectCity(city.cityNames)">
+        </ng-container>
+</div>
+    <br>
+
+    <div *ngIf="checkTheatre">
+        <h2><i>Select a theatre</i></h2>      
+        <ng-container *ngFor="let theatre of theatres">&nbsp;
+            <input type="submit" value={{theatre.theatreName}} (click)="selectTheatre(theatre.theatreName)">
+        </ng-container>      
+    </div>
+    <br>
+
+    <div *ngIf="checkMovies">
+        <h2><i>Select a Movie</i></h2>
+        <ng-container *ngFor="let movie of movie_details">&nbsp;
+            <input type="submit" value={{movie.movie}} (click)="selectMovie(movie.movie)">
+           </ng-container> 
+    </div>
+    <br>
+
+    <div *ngIf="checkShows">
+        <h2><i>Select a show</i></h2>
+        <table border="2" cellspacing="5" cellpadding="5">
+        <tr *ngFor="let shows of show_details">
+            <td><input type="submit" value={{shows.show}} (click)="selectShow(shows.show)"></td>
+            <td>{{shows.timings}}</td>
+        </tr>
+    </table>
+    </div>
+    <br>
+
+    <div *ngIf="checkLanguage">
+        <h2><i>Select a language</i></h2>  
+        <ng-container *ngFor="let languages of language_details">&nbsp;
+<input type="submit" value={{languages.language}} (click)="selectLanguage(languages.language)">
+            <!-- <td>{{languages.screen}}</td> -->
+        </ng-container> 
+    </div>
+    <br>
+
+    <div *ngIf="checkSeats">
+        <h2><i>Select a seat</i></h2>
+        <table border="2" cellspacing="5" cellpadding="5">
+        <tr>
+            <th>Seat Type</th>
+            <th>Available Seats</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let seat of seats">
+            <td><input type="submit" value={{seat.seatType}} (click)="chosenSeat(seat)"></td>
+            <td>{{seat.availableSeats}}</td>
+            <td>{{seat.price}}</td>
+        </tr>
+    </table>
+    <h3><i>Register to book your tickets!</i></h3>
+    </div> 
+
+
+    <!-- <div *ngIf="check">
+        Please enter the no. of seats to be booked : <input type="text" name="seatsBooked" placeholder="enter no. of seats" [(ngModel)]="no_of_seats" required><br>
+        <input type="submit" value="submit" (click)="no_of_seats_selected()">
+    </div>
+    <br>
+
+    <div *ngIf="check1">
+        <h2>Your total amount is : {{total_amount}}</h2>
+        <br>
+        Please enter your account no. : <input type="text" name="account" [(ngModel)]="accountNo" required><br>
+        <input type="submit" value="submit" (click)="entered_accountNo()">
+    </div>
+
+    <div *ngIf="check5">
+        <h2>please enter a valid amount of seats to be booked!!</h2>
+    </div>
+    <br>
+
+    <div *ngIf="check2">
+        <h2>sorry, you won't have sufficient account balance</h2>
+    </div>
+    <br>
+
+    <div *ngIf="check3">
+        <h1>Hurray! your tickets are booked...</h1>
+        <h1>Your booking slip is shown below</h1>
+        <h2>City : {{booking_slip.city}}</h2>
+        <h2>Theatre : {{booking_slip.theatre}}</h2>
+        <h2>Movie : {{booking_slip.movie}}</h2>
+        <h2>Show : {{booking_slip.show}}</h2>
+        <h2>Language : {{booking_slip.language}}</h2>
+        <h2>Seat type : {{booking_slip.seat_type}}</h2>
+        <h2>Seats booked : {{booking_slip.seats_booked}}</h2>
+        <h2>Total amount : {{booking_slip.amount}}</h2>
+        <h2>{{payment_message}}</h2>
+    </div>
+    <br>
+
+    <div *ngIf="check4">
+        <h2>sorry, entered account number is not correct or does not exist!!</h2>
+    </div>
+
+</div>
+</div>
+<br> -->
+
+<!-- <div *ngIf="checkAuthentication2" align="center">
+    Not a registered user !!
+</div> -->

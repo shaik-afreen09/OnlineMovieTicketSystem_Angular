@@ -1,0 +1,47 @@
+ <!-- <br>
+<div align="center">
+    <h4><i>Provide below details to cancel your booked tickets</i></h4>
+     Enter your account no : <input type="text" name="acc_no" [(ngModel)]="accountNo" required placeholder="enter your account no."><br><br>
+     Enter your booking Id : <input type="text" name="book_id" [(ngModel)]="booking_id" required placeholder="enter your booking Id"><br><br>
+    <input type="submit" value="Confirm" (click)="refund_data()">
+</div>
+<br>
+
+<div *ngIf="check" align="center">
+    <h4><i>Sorry, the entered details you were incorrect</i></h4>
+    <h4>or</h4><br>
+    <h4><i>Refunding already executed in the past</i></h4>
+</div>
+<br>
+
+<div *ngIf="check1" align="center">
+    <h4>Money was refunded successfully!!</h4>
+    <h4>Money Refunded : {{refund_obj.money_refunded}}</h4><br>
+    <h4>No. of seats booked by you : {{refunded_data.seats_booked}}</h4><br>
+    <h4>Seat type : {{refunded_data.seat_type}}</h4>
+</div> 
+ -->
+<br><br>
+ <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+</head>
+<div align="center">
+    <h4><i>Provide below details to cancel your booked tickets</i></h4>
+     Enter your card no : <input type="text" name="acc_no" [(ngModel)]="accountNo" required placeholder="enter your card no."><br><br>
+     Enter your booking Id : <input type="text" name="book_id" [(ngModel)]="bookingId" required placeholder="enter your booking Id"><br><br>
+    <input type="submit" value="Confirm" (click)="refund_data()">
+</div>
+<br><br>
+<div *ngIf="check" align="center">
+    <h4><i>Your amount is refunded successfully!!</i></h4>
+    <h4><i>Amount Refunded : {{refund_obj.moneyRefunded}}</i></h4><br>
+    <h4>No. of seats booked by you : {{refunded_data.seatsBooked}}</h4><br>
+    <h4>Seat type : {{refunded_data.seatType}}</h4>
+</div>
+<br>
+
+<div *ngIf="check1" align="center">
+    <h4><i>Sorry, the entered details were incorrect</i></h4>
+    <h4>or</h4><br>
+    <h4><i>refunding already executed in the past</i></h4>
+</div> 

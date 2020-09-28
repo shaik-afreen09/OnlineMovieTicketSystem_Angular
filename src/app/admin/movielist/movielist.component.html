@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+    <table class="table table-striped" *ngIf="movies && movies.length > 0  else elseBlock">
+        <thead>
+        <tr>
+            <th>MOVIE ID</th>
+            <th>THEATRES</th>
+            <th>MOVIE NAME</th>
+            <th>DELETE MOVIE</th>
+            <th>EDIT MOVIE</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of movies">
+                <td> {{m.movieId}} </td>
+                <td> {{m.theatres}} </td>
+                <td> {{m.movie}} </td>
+                <td>
+                    <button type="button" class="btn btn-block btn-primary" (click)=deletem(m)>Delete</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-block btn-primary" (click)=updatem(m)>Edit</button>
+                </td>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #elseBlock>
+        <h4 align="center"> There are no movies to display,add the movies! </h4>
+    </ng-template>
+
+</div>
+<div>
+    <h2>{{message}}</h2>
+</div>
+ 

@@ -1,0 +1,82 @@
+<!--<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container">
+    ///<form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+        <div style="margin-right: 80%;">
+    <div class="container" style="background-color:whitesmoke;bottom: 0"><br>
+      <div class="container col-md-11">
+        <br><br>
+    <input type="button" class="container  btn btn-primary " value="Add city" routerLink="addcity">
+    <br><br>
+    <input type="button" class="container  btn btn-primary " value="city list" routerLink="citylist">
+    <br><br> 
+    <input type="button" class="container  btn btn-primary " value="Add Theatre" routerLink="addtheatre">
+    <br><br> 
+    <input type="button" class="container  btn btn-primary " value="Theatre list" routerLink="theatrelist">
+    <br><br> 
+    <input type="button" class="container  btn btn-primary " value="Add Movie" routerLink="addmovie">
+    <br><br>
+    <input type="button" class="container  btn btn-primary " value="Movie list" routerLink="movielist">
+    <br><br>
+    <input type="button" class="container  btn btn-primary " value="Add Show" routerLink="addshow">
+    <br><br> 
+    <input type="button" class="container  btn btn-primary " value="Show List" routerLink="showlist">
+    <br><br> 
+    ///<input [disabled]="userForm.invalid" type="submit" value="Add city" class="btn btn-primary">
+</div>
+</div>
+</div> 
+<router-outlet></router-outlet> 
+-->
+<br>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <div align="center">
+  <h4><i>Admin Operations</i></h4>
+  </div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <a class="navbar-brand" href="">
+      </a>
+      <ul class="nav nav-pills ">
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="addcity">Add city</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" class="btn btn-info btn-sm mr-3"  routerLink="citylist">City list</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="addtheatre">Add Theatre</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="theatrelist">Theatre list</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="addmovie">Add Movie</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="movielist">Movie list</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="addshow">Add Show</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3" routerLink="showlist">Show List</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" class="btn btn-info  btn-sm  mr-3"  routerLink="admin-logout">Admin Logout</a>
+          <!-- <input type="submit" value="Admin logout" class="btn btn-primary"> -->
+
+      </li>
+
+    </ul>
+    </nav>
+    </div>
+  
+  <div class="container-fluid">
+  <router-outlet></router-outlet>
+  </div>
